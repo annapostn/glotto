@@ -91,7 +91,8 @@ h1 {
 }
 
 #header a {
-    position: absolute;
+    position: relative;
+	vertical-allign: center;
     top: 30px;
     left: 700px;
     text-decoration: none;
