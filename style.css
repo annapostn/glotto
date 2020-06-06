@@ -92,12 +92,11 @@ h1 {
 
 #header a {
     position: relative;
-	vertical-allign: center;
-    top: 30px;
+    top: -50px;
     left: 700px;
     text-decoration: none;
-    color: #ffffff;
-    left: 20px00px;
+    color: #fff;
+    left: 600px;
     font-size: 14pt;
     
 }
