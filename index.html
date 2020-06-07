@@ -20,8 +20,21 @@
     <div id="main_text">
         <p>
 		Анализатор показывает распределение языков, представленных в выборке для вашего типологического исследования, по макроареалам и семьям. Все данные по языкам взяты с сайта Glottolog.<br>
-		Вам необходимо загрузить текстовый файл, в котором указаны коды всех языков, рассмотренных в выборке, по одному на каждой строке. Можно исползовать iso-коды и glotto-коды.
+		Вам необходимо загрузить текстовый файл, в котором указаны коды всех языков, рассмотренных в выборке, по одному на каждой строке. Можно исползовать ISO-коды и glotto-коды.
 	   </p>
+    </div>
+	
+    <div class="control-group">
+        <label class="control control-radio">
+            Glotto-коды
+            <input type="radio" name="radio" checked="checked" />
+            <div class="control_indicator"></div>
+        </label>
+        <label class="control control-radio">
+            ISO-коды
+            <input type="radio" name="radio" />
+            <div class="control_indicator"></div>
+        </label>
     </div>
     
 	<form id="upload-container" method="POST" action="send.php">
