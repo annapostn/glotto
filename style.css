@@ -103,7 +103,7 @@ h1 {
 }
 
 #logo {
-    background-color: #ffffff;
+    background-image: url(logo.png);
     position: relative;
     width: 114px;
     height: 41px;
