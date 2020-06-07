@@ -1,5 +1,8 @@
 from flask import Flask
 from flask import url_for, render_template, request, redirect
+from werkzeug.utils import secure_filename
+import os
+
 
 UPLOAD_FOLDER = '/'
 ALLOWED_EXTENSIONS = set(['txt'])
@@ -8,8 +11,12 @@ app = Flask(__name__)
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
+
 @app.route('/', methods=['GET', 'POST'])
-def index():
+def upload_file():
   if request.method == 'POST':
     file = request.files['file']
     if file and allowed_file(file.filename):
@@ -17,8 +24,8 @@ def index():
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         return redirect(url_for('uploaded_file',
                                 filename=filename))
-  return render_template(index.html)
-  
+  return render_template('templates/index.html')
+
 from flask import send_from_directory
 
 @app.route('/uploads/<filename>')
